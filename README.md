@@ -11,6 +11,7 @@ select * from custumers where city in ('rehovot','modiin')
 ![image](https://user-images.githubusercontent.com/72870423/186677696-69071706-c3bf-4cb9-be02-149874a1a3fc.png)
 
 Execute query by text:
+
 select * from customers as customer join orders as orders on customer.cid = orders.cid
 ![image](https://user-images.githubusercontent.com/72870423/186677780-2050ac56-9108-49e3-bd99-12db02ccd782.png)
 
