@@ -1,4 +1,4 @@
-# SQL-Mongi-Parser
+# SQL-Mongo-Parser
 Converts SQL Queries to JSON.
 
 ![image](https://user-images.githubusercontent.com/72870423/186699864-7ff02a30-0a5c-4188-a3ad-c84a76164d45.png)
