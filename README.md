@@ -4,20 +4,17 @@ Converts SQL Queries to JSON.
 ![image](https://user-images.githubusercontent.com/72870423/186673927-dd775a39-ffaf-48df-af1f-a3af119d03b3.png)
 
 Queries SQL examples:
+
 select * from custumers
-
 ![image](https://user-images.githubusercontent.com/72870423/186674095-d10e8f41-c67d-472f-bd20-bf4ce3ded45f.png)
-
 select * from custumers where city in ('rehovot','modiin')
+![image](https://user-images.githubusercontent.com/72870423/186677696-69071706-c3bf-4cb9-be02-149874a1a3fc.png)
 
-![image](https://user-images.githubusercontent.com/72870423/186674996-b085d8f3-847d-4d37-b74e-b3f764de8ea1.png)
-
+Execute query by text:
 select * from customers as customer join orders as orders on customer.cid = orders.cid
-
-![image](https://user-images.githubusercontent.com/72870423/186675693-f4842dd5-8179-4a88-997e-c2e036a27719.png)
+![image](https://user-images.githubusercontent.com/72870423/186677780-2050ac56-9108-49e3-bd99-12db02ccd782.png)
 
 MongoDb Database example:
-![image](https://user-images.githubusercontent.com/72870423/186676676-26ceffa0-e1d3-457b-91d4-3f839885091c.png)
 ![image](https://user-images.githubusercontent.com/72870423/186677353-06b93448-9c83-41f3-a114-b1bfd08818b3.png)
 
 Customers:
