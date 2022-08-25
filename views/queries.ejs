@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>SQL To JSON converter website</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css" media="all">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/css/share.min.css" media="all">
+</head>
+
+<body>
+
+    <div class="col-md-12 text-center bg-primary">
+        <h1 style="color: black;"> SQL To JSON Converter</h1>
+        <p class="text-center">
+            Converts SQL Queries to JSON.
+            You have five options like:
+            CREATE, SELECT, INSERT, UPDATE and DELETE.
+        </p>
+    </div>
+
+
+    <div class="well all-container">
+
+        <div class="main">
+
+            <div id="queriesContainer" class="border" style="padding: 24px 4px;">
+                <% for (const key in queries) { %>
+                <div style="display: flex; margin-left: 8px; margin-top: 4x;">
+                    <button style="text-align: left;" id="<%= key %>" onclick="fetchQuery(id)">
+                        <%= queries[key] %></button>
+                </div>
+                <br>
+                <% }; %>
+            </div>
+
+            <div id="resultContainer" class="border">
+                <center>
+                    <h2><u>Result</u></h2>
+                </center>
+                <textarea id="result" style="height: 80vh; resize: none; cursor: default" readonly></textarea>
+                <div style="margin: 24px;">
+                    Enter query: <input id="input-query" style="width: 75%;" type="text">
+                    <button style="margin-left: 12px; text-align: center;"
+                        onclick="fetchQuery(document.getElementById('input-query').value)"> Execute query</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-12 text-center" style="padding: 32px 0 18px 0;">
+            <div class="social-share"
+                data-disabled="qzone,google,twitter,linkedin,facebook,qq,weibo,wechat,douban,diandian,tencent">Created
+                by:
+                <a class="social-share-icon icon-linkedin" target="_blank"
+                    href="https://www.linkedin.com/in/ronen-saviz/"></a>Ronen Saviz
+                <a class="social-share-icon icon-linkedin" target="_blank"
+                    href="https://www.linkedin.com/in/paz-nahmias-b48452155/"></a>Paz Nahmias
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const fetchQuery = async (id) => {
+            const resContainer = document.getElementById("result");
+            resContainer.value = "";
+            await fetch(`fetch/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    resContainer.value = JSON.stringify(data, null, 4)
+                });
+        }
+    </script>
+
+</body>
+
+</html>

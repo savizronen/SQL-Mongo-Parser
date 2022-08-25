@@ -1,0 +1,31 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.all-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#resultContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin-left: 14px;
+}
+
+#result {
+    margin: 12px;
+}
